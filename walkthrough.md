@@ -34,6 +34,19 @@ O antigo layout de "galeria" foi substituído por uma experiência de **Editoria
 3.  Note a transição suave de entrada dos elementos (`fadeInUp`).
 4.  Passe o mouse sobre os produtos no catálogo para ver o efeito de "Quick View".
 
+## Limpeza do Projeto (Cleanup)
+
+Para manter o projeto organizado e leve, realizamos uma limpeza profunda removendo arquivos legados e boilerplate.
+
+### Arquivos Removidos:
+- **Root:** `page.html`, `Entre Fio e Luxo - Handmade Crochet.html`, pasta de arquivos do Replit e backup `.zip`.
+- **Source (`src`):** `App.css` (estilos centralizados no `index.css`) e `react.svg`.
+- **Public:** `vite.svg` e versões legadas do logo (`logo.png`, `logo.svg`).
+
+### Verificação de Integridade
+- [x] Build de produção (`npm run build`) concluído com sucesso.
+- [x] Lint (`npm run lint`) sem avisos ou erros.
+
 ---
 **Próximos Passos (Sugestão):**
 *   Implementar a página de detalhes do produto real (Modal).
