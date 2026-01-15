@@ -57,7 +57,7 @@ const Footer: React.FC = () => {
             © 2026 Entre Fio e Luxo. Feito com alma e paciência.
           </p>
           <p className="text-[9px] uppercase tracking-[0.2em] text-gray-400/80">
-            Design por <a href="https://github.com/tonny-athylla" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors font-bold underline decoration-primary/30 underline-offset-4">Tonny Athylla</a>
+            Design por <a href="https://www.instagram.com/tonnyathylla" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors font-bold underline decoration-primary/30 underline-offset-4">Tonny Athylla</a>
           </p>
           <div className="flex justify-center gap-6 text-[8px] uppercase tracking-[0.2em] text-gray-400/60 font-medium">
             <a href="#" className="hover:text-primary transition-colors">Termos</a>
