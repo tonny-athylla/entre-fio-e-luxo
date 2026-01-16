@@ -61,11 +61,11 @@ const products: Product[] = [
   },
   {
     id: 6,
-    title: "Sousplat Tulipas Imperial",
+    title: "Centro de Mesa Lilás",
     price: "Sob consulta",
-    image: `${import.meta.env.BASE_URL}products/tulipas-garden.jpg`,
+    image: `${import.meta.env.BASE_URL}products/centro-mesa-lilas.jpg`,
     category: "Mesa Posta",
-    description: "Verde floresta profundo com tulipas em vermelho vivo, ideal para ocasiões especiais."
+    description: "Exuberante peça central em tons de lilás e roxo com pontos rendados e acabamento artesanal impecável."
   },
   {
     id: 7,
@@ -142,22 +142,23 @@ const Gallery: React.FC = () => {
   };
 
   return (
-    <section id="catalogo" className="py-48 px-6 md:px-12 max-w-[1800px] mx-auto">
+    <section id="catalogo" className="py-48 px-6 md:px-12 max-w-[1800px] mx-auto overflow-hidden">
       <div className="text-center mb-40 animate-fade-in-up">
         <span className="text-primary uppercase tracking-[0.5em] text-[11px] font-black mb-6 block">Exclusividade em cada ponto</span>
         <h2 className="font-display text-7xl md:text-9xl text-text-light dark:text-text-dark italic font-light tracking-tighter">Nossa Coleção</h2>
       </div>
 
       <div className="relative group/carousel">
-        <div className="overflow-hidden cursor-grab active:cursor-grabbing px-4 md:px-0">
+        <div className="overflow-visible cursor-grab active:cursor-grabbing px-4 md:px-0">
           <motion.div
             className="flex gap-8 lg:gap-12"
             drag="x"
             dragConstraints={{ left: 0, right: 0 }}
-            dragElastic={0.1}
+            dragElastic={0.15}
+            dragMomentum={false}
             onDragEnd={(_e, { offset, velocity }) => {
               const swipe = offset.x + velocity.x;
-              const threshold = 50;
+              const threshold = 40;
               if (swipe < -threshold) {
                 nextSlide();
               } else if (swipe > threshold) {
@@ -165,11 +166,9 @@ const Gallery: React.FC = () => {
               }
             }}
             animate={{
-              x: window.innerWidth < 768
-                ? `-${currentIndex * 100}%`
-                : `-${currentIndex * 100}%`
+              x: `calc(-${currentIndex * 100}% - ${currentIndex * (window.innerWidth < 1024 ? 32 : 48)}px)`
             }}
-            transition={{ type: "spring", stiffness: 40, damping: 18, mass: 0.8 }}
+            transition={{ type: "spring", stiffness: 100, damping: 20, mass: 1 }}
           >
             {products.map((p) => (
               <motion.article
@@ -180,7 +179,7 @@ const Gallery: React.FC = () => {
                     ? "100%"
                     : `calc((100% - ${(itemsPerPage - 1) * (window.innerWidth < 1024 ? 32 : 48)}px) / ${itemsPerPage})`
                 }}
-                whileHover={{ y: -15 }}
+                whileHover={window.innerWidth >= 768 ? { y: -15 } : {}}
                 transition={{ duration: 0.5, ease: "easeOut" }}
                 onClick={() => setSelectedProduct(p)}
               >
@@ -189,6 +188,7 @@ const Gallery: React.FC = () => {
                     alt={p.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 ease-in-out"
                     src={p.image}
+                    loading="lazy"
                     onError={(e) => { e.currentTarget.src = `https://picsum.photos/600/750?random=${p.id}`; }}
                   />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-700"></div>
