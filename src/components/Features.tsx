@@ -12,7 +12,7 @@ const Features: React.FC = () => {
     {
       icon: <Fingerprint size={40} strokeWidth={1} />,
       title: "Essência Artesanal",
-      desc: "Cada ponto carrega a alma e a dedicação de horas de trabalho manual."
+      desc: "Cada ponto carrega a dedicação e o cuidado de horas de trabalho manual."
     },
     {
       icon: <PenLine size={40} strokeWidth={1} />,

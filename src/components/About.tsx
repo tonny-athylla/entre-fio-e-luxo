@@ -18,7 +18,7 @@ const About: React.FC = () => {
           <div className="space-y-4">
             <span className="text-primary uppercase tracking-[0.4em] text-[10px] font-bold">Manifesto</span>
             <h2 className="font-display text-5xl md:text-7xl italic text-text-light dark:text-text-dark leading-tight">
-              Slow Fashion <br /> & Alma
+              Slow Fashion <br /> & Essência
             </h2>
           </div>
 

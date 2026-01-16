@@ -54,7 +54,7 @@ const Footer: React.FC = () => {
 
         <div className="space-y-4">
           <p className="text-[10px] uppercase tracking-[0.4em] text-gray-400 font-bold">
-            © 2026 Entre Fio e Luxo. Feito com alma e paciência.
+            © 2026 Entre Fio e Luxo. Feito com cuidado e paciência.
           </p>
           <p className="text-[9px] uppercase tracking-[0.2em] text-gray-400/80">
             Desenvolvido por <a href="https://www.instagram.com/tonnyathylla" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors font-bold underline decoration-primary/30 underline-offset-4">Tonny Athylla</a>

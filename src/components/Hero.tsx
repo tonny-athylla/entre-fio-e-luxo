@@ -14,7 +14,7 @@ const Hero: React.FC = () => {
 
 
         <h1 className="font-display text-6xl md:text-8xl lg:text-9xl text-text-light dark:text-text-dark italic font-light tracking-tighter mb-10 leading-[0.9] drop-shadow-sm">
-          A arte do feito à mão <br className="hidden md:block" /> com <span className="text-primary italic relative inline-block">alma<span className="absolute -bottom-2 left-0 w-full h-1 bg-primary/30 rounded-full"></span></span>.
+          A arte do feito à mão <br className="hidden md:block" /> com <span className="text-primary italic relative inline-block">essência<span className="absolute -bottom-2 left-0 w-full h-1 bg-primary/30 rounded-full"></span></span>.
         </h1>
 
         <p className="text-xl md:text-2xl text-gray-500 dark:text-gray-400 font-light max-w-2xl leading-relaxed tracking-wide mb-12">
