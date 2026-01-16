@@ -10,7 +10,7 @@ const About: React.FC = () => {
           <img
             alt="Detalhe de sousplat artesanal premium"
             className="w-full aspect-[16/10] object-cover rounded-xl shadow-2xl grayscale-[0.05]"
-            src="/manifesto.png"
+            src={`${import.meta.env.BASE_URL}manifesto.png`}
           />
         </div>
 

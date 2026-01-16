@@ -31,7 +31,7 @@ const products: Product[] = [
     id: 1,
     title: "Sousplat Pétalas Rosé",
     price: "Sob consulta",
-    image: "/products/sousplat-rosa.jpg",
+    image: `${import.meta.env.BASE_URL}products/sousplat-rosa.jpg`,
     category: "Mesa Posta",
     description: "Design exclusivo com bordas em pétalas sobrepostas em tons de rosa e areia."
   },
@@ -39,7 +39,7 @@ const products: Product[] = [
     id: 2,
     title: "Sousplat Tulipas Serenity",
     price: "Sob consulta",
-    image: "/products/kit-tulipas-azul.jpg",
+    image: `${import.meta.env.BASE_URL}products/kit-tulipas-azul.jpg`,
     category: "Mesa Posta",
     description: "Delicado contraste entre o azul serenity e bordado de tulipas em relevo."
   },
@@ -47,7 +47,7 @@ const products: Product[] = [
     id: 3,
     title: "Sousplat Tulipas Noturno",
     price: "Sob consulta",
-    image: "/products/kit-tulipas-navy.jpg",
+    image: `${import.meta.env.BASE_URL}products/kit-tulipas-navy.jpg`,
     category: "Mesa Posta",
     description: "Elegância profunda em azul marinho com detalhes de tulipas em rosa chá."
   },
@@ -55,7 +55,7 @@ const products: Product[] = [
     id: 5,
     title: "Centro de Mesa Contraste Rubi",
     price: "Sob consulta",
-    image: "/products/kit-mandala-rustica.jpg",
+    image: `${import.meta.env.BASE_URL}products/kit-mandala-rustica.jpg`,
     category: "Mesa Posta",
     description: "Composição vibrante em tons terrosos com centro geométrico. Inclui conjunto de porta xícaras."
   },
@@ -63,7 +63,7 @@ const products: Product[] = [
     id: 6,
     title: "Sousplat Tulipas Imperial",
     price: "Sob consulta",
-    image: "/products/sousplat-tulipas-navy-2.jpg",
+    image: `${import.meta.env.BASE_URL}products/tulipas-garden.jpg`,
     category: "Mesa Posta",
     description: "Verde floresta profundo com tulipas em vermelho vivo, ideal para ocasiões especiais."
   },
@@ -71,7 +71,7 @@ const products: Product[] = [
     id: 7,
     title: "Sousplat Coral Rendado",
     price: "Sob consulta",
-    image: "/products/sousplat-coral-rendado.jpg",
+    image: `${import.meta.env.BASE_URL}products/sousplat-coral-rendado.jpg`,
     category: "Mesa Posta",
     description: "Trabalho primoroso em tom coral com bordas trabalhadas em pontos rendados."
   },
@@ -79,7 +79,7 @@ const products: Product[] = [
     id: 8,
     title: "Kit Tulipas Rosa Amorosa",
     price: "Sob consulta",
-    image: "/products/kit-tulipas-rosa-coracao.jpg",
+    image: `${import.meta.env.BASE_URL}products/kit-tulipas-rosa-coracao.jpg`,
     category: "Mesa Posta",
     description: "Conjunto romântico com porta-copos coordenados e detalhe de coração em crochê."
   },
@@ -87,7 +87,7 @@ const products: Product[] = [
     id: 9,
     title: "Trilho de Mesa Floral",
     price: "Sob consulta",
-    image: "/products/trilho-mesa-flores.jpg",
+    image: `${import.meta.env.BASE_URL}products/trilho-mesa-flores.jpg`,
     category: "Mesa Posta",
     description: "Caminho de mesa exuberante composto por centros de mesa e flores aplicadas em relevo."
   },
@@ -95,15 +95,15 @@ const products: Product[] = [
     id: 10,
     title: "Conjunto Chá de Lavanda",
     price: "Sob consulta",
-    image: "/products/conjunto-mesa-lavanda.jpg",
+    image: `${import.meta.env.BASE_URL}products/conjunto-mesa-lavanda.jpg`,
     category: "Mesa Posta",
     description: "Composição delicada em tons de lilás e areia, perfeitos para um café da tarde elegante."
   },
   {
-    id: 10,
+    id: 11,
     title: "Sousplat Tulipas Garden",
     price: "Sob consulta",
-    image: "/products/tulipas-garden.jpg",
+    image: `${import.meta.env.BASE_URL}products/tulipas-garden.jpg`,
     category: "Mesa Posta",
     description: "Fundo verde floresta com bordas em ponto tulipa 3D vermelho vibrante. Design clássico e sofisticado."
   }
@@ -336,7 +336,7 @@ const Gallery: React.FC = () => {
           <img
             alt="EFL Icon"
             className="w-16 h-16 dark:invert"
-            src="/logo-icon.png"
+            src={`${import.meta.env.BASE_URL}logo-icon.png`}
             onError={(e) => { e.currentTarget.src = 'https://picsum.photos/64/64'; }}
           />
         </div>

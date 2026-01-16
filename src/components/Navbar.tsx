@@ -10,11 +10,11 @@ interface NavbarProps {
 const Navbar: React.FC<NavbarProps> = ({ toggleTheme, isDarkMode }) => {
   return (
     <nav className="fixed top-0 w-full z-50 py-3 px-6 md:px-12 flex justify-between items-center backdrop-blur-md bg-white/5 dark:bg-black/5 border-b border-stone-200/50 dark:border-stone-800/50">
-      <a href="/" className="flex items-center gap-3 group hover:opacity-90 transition-opacity">
+      <a href={import.meta.env.BASE_URL} className="flex items-center gap-3 group hover:opacity-90 transition-opacity">
         <img
           alt="Entre Fio e Luxo Icon"
-          className="h-8 md:h-10 w-auto dark:invert transition-all brightness-90 contrast-125 object-contain"
-          src="/logo-icon.png"
+          className="h-10 md:h-12 w-auto dark:invert transition-all brightness-90 contrast-125 object-contain"
+          src={`${import.meta.env.BASE_URL}logo-full.png`}
           onError={(e) => { e.currentTarget.src = 'https://picsum.photos/50/50?text=EFL'; }}
         />
         <span className="font-display text-xl md:text-2xl font-bold tracking-tight text-primary dark:text-sand">
