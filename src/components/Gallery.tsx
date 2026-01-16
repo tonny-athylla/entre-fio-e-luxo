@@ -149,7 +149,7 @@ const Gallery: React.FC = () => {
       </div>
 
       <div className="relative group/carousel">
-        <div className="overflow-hidden cursor-grab active:cursor-grabbing">
+        <div className="overflow-hidden cursor-grab active:cursor-grabbing px-4 md:px-0">
           <motion.div
             className="flex gap-8 lg:gap-12"
             drag="x"
@@ -157,21 +157,29 @@ const Gallery: React.FC = () => {
             dragElastic={0.1}
             onDragEnd={(_e, { offset, velocity }) => {
               const swipe = offset.x + velocity.x;
-              const threshold = 50; // Sensibilidade do swipe
+              const threshold = 50;
               if (swipe < -threshold) {
                 nextSlide();
               } else if (swipe > threshold) {
                 prevSlide();
               }
             }}
-            animate={{ x: `-${currentIndex * 100}%` }}
+            animate={{
+              x: window.innerWidth < 768
+                ? `-${currentIndex * 100}%`
+                : `-${currentIndex * 100}%`
+            }}
             transition={{ type: "spring", stiffness: 40, damping: 18, mass: 0.8 }}
           >
             {products.map((p) => (
               <motion.article
                 key={p.id}
                 className="flex-none cursor-pointer group"
-                style={{ width: `calc((100% - ${(itemsPerPage - 1) * (window.innerWidth < 1024 ? 32 : 48)}px) / ${itemsPerPage})` }}
+                style={{
+                  width: window.innerWidth < 768
+                    ? "100%"
+                    : `calc((100% - ${(itemsPerPage - 1) * (window.innerWidth < 1024 ? 32 : 48)}px) / ${itemsPerPage})`
+                }}
                 whileHover={{ y: -15 }}
                 transition={{ duration: 0.5, ease: "easeOut" }}
                 onClick={() => setSelectedProduct(p)}
@@ -184,7 +192,6 @@ const Gallery: React.FC = () => {
                     onError={(e) => { e.currentTarget.src = `https://picsum.photos/600/750?random=${p.id}`; }}
                   />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-700"></div>
-
 
                   <div className="absolute inset-x-0 bottom-0 p-8 flex flex-col justify-end opacity-0 group-hover:opacity-100 translate-y-6 group-hover:translate-y-0 transition-all duration-700">
                     <p className="text-white text-[10px] mb-6 font-light leading-relaxed tracking-wide italic">
@@ -211,19 +218,21 @@ const Gallery: React.FC = () => {
         {/* Navigation Arrows */}
         <button
           onClick={prevSlide}
-          className="absolute top-1/2 -left-12 lg:-left-20 -translate-y-1/2 p-4 text-stone-400 hover:text-primary transition-colors hidden md:block"
+          className="absolute top-1/2 -left-4 md:-left-12 lg:-left-20 -translate-y-1/2 p-4 text-stone-400 hover:text-primary transition-colors z-10"
+          aria-label="Anterior"
         >
-          <ChevronLeft className="w-10 h-10 font-light" />
+          <ChevronLeft className="w-8 h-8 md:w-10 md:h-10 font-light" />
         </button>
         <button
           onClick={nextSlide}
-          className="absolute top-1/2 -right-12 lg:-right-20 -translate-y-1/2 p-4 text-stone-400 hover:text-primary transition-colors hidden md:block"
+          className="absolute top-1/2 -right-4 md:-right-12 lg:-right-20 -translate-y-1/2 p-4 text-stone-400 hover:text-primary transition-colors z-10"
+          aria-label="Próximo"
         >
-          <ChevronRight className="w-10 h-10 font-light" />
+          <ChevronRight className="w-8 h-8 md:w-10 md:h-10 font-light" />
         </button>
 
         {/* Pagination Dots */}
-        <div className="flex justify-center gap-3 mt-20">
+        <div className="flex justify-center gap-3 mt-12 md:mt-20">
           {Array.from({ length: totalPages }).map((_, i) => (
             <button
               key={i}
