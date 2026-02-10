@@ -51,14 +51,7 @@ const products: Product[] = [
     category: "Mesa Posta",
     description: "Elegância profunda em azul marinho com detalhes de tulipas em rosa chá."
   },
-  {
-    id: 5,
-    title: "Centro de Mesa Contraste Rubi",
-    price: "Sob consulta",
-    image: `${import.meta.env.BASE_URL}products/kit-mandala-rustica.jpg`,
-    category: "Mesa Posta",
-    description: "Composição vibrante em tons terrosos com centro geométrico. Inclui conjunto de porta xícaras."
-  },
+
 
   {
     id: 7,
