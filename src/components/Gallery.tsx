@@ -59,14 +59,7 @@ const products: Product[] = [
     category: "Mesa Posta",
     description: "Composição vibrante em tons terrosos com centro geométrico. Inclui conjunto de porta xícaras."
   },
-  {
-    id: 6,
-    title: "Centro de Mesa Lilás",
-    price: "Sob consulta",
-    image: `${import.meta.env.BASE_URL}products/centro-mesa-lilas.jpg`,
-    category: "Mesa Posta",
-    description: "Exuberante peça central em tons de lilás e roxo com pontos rendados e acabamento artesanal impecável."
-  },
+
   {
     id: 7,
     title: "Sousplat Coral Rendado",
@@ -106,6 +99,22 @@ const products: Product[] = [
     image: `${import.meta.env.BASE_URL}products/tulipas-garden.jpg`,
     category: "Mesa Posta",
     description: "Fundo verde floresta com bordas em ponto tulipa 3D vermelho vibrante. Design clássico e sofisticado."
+  },
+  {
+    id: 12,
+    title: "Sousplat Turquesa Imperial",
+    price: "Sob consulta",
+    image: `${import.meta.env.BASE_URL}products/sousplat-turquesa.jpg`,
+    category: "Mesa Posta",
+    description: "Elegância em tons de turquesa com acabamento em bicos brancos, trazendo frescor e sofisticação à mesa."
+  },
+  {
+    id: 13,
+    title: "Centro de Mesa Lavanda Floral",
+    price: "Sob consulta",
+    image: `${import.meta.env.BASE_URL}products/centro-mesa-lavanda.jpg`,
+    category: "Mesa Posta",
+    description: "Conjunto encantador em tons de lavanda e roxo, composto por centro de mesa e porta-copos coordenados."
   }
 ];
 
